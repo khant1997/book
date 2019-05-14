@@ -1,0 +1,7 @@
+@include('/admin/partials/header')
+@include('/admin/partials/nav')
+@yield('script')
+@yield('page_script')
+@yield('content')
+@yield('main')
+@include('/admin/partials/footer')
