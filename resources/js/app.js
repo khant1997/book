@@ -26,6 +26,7 @@ window.Vue = require('vue');
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('banner-component', require('./components/banner.vue').default);
+Vue.component('home-page', require('./components/home.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
