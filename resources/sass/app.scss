@@ -26,6 +26,39 @@ body {
     .navbar-brand, .nav-link {
         color: #fff !important;
     }
+    .nav-item {
+        position: relative;
+        .nav-link {
+            &:before {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                margin: auto;
+                width: 0;
+                content: '.';
+                color: transparent;
+                background: #cdd1d5;
+                height: 3px;
+                transition: all .5s;
+            }
+            &:hover:before {
+                width: 100%;
+            }
+            &:active:before {
+                width: 100%!important;
+                background: #FF7052!important;
+            }
+        }
+    }
+    .nav-item.active {
+        .nav-link {
+            &:before{
+                width: 100%!important;
+                background: #FF7052!important;
+            }
+        }
+    }
 }
 
 .navbar-laravel {
@@ -97,8 +130,12 @@ body {
 /*Login*/
 
 .auth-form {
-    margin: 170px auto;
     width: 50vw;
+    overflow: hidden;
+    z-index: 9999;
+    position: absolute;
+    top: 30%;
+    left: 30%;
 
     input{
         border: 1px solid #EDEDED;

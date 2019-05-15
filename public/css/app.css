@@ -10687,6 +10687,38 @@ body {
   color: #fff !important;
 }
 
+.custom-nav .nav-item {
+  position: relative;
+}
+
+.custom-nav .nav-item .nav-link:before {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0;
+  content: ".";
+  color: transparent;
+  background: #cdd1d5;
+  height: 3px;
+  transition: all 0.5s;
+}
+
+.custom-nav .nav-item .nav-link:hover:before {
+  width: 100%;
+}
+
+.custom-nav .nav-item .nav-link:active:before {
+  width: 100% !important;
+  background: #FF7052 !important;
+}
+
+.custom-nav .nav-item.active .nav-link:before {
+  width: 100% !important;
+  background: #FF7052 !important;
+}
+
 .navbar-laravel {
   /*background-color: #fff;*/
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
@@ -10755,8 +10787,12 @@ body {
 /*Login*/
 
 .auth-form {
-  margin: 170px auto;
   width: 50vw;
+  overflow: hidden;
+  z-index: 9999;
+  position: absolute;
+  top: 30%;
+  left: 30%;
 }
 
 .auth-form input {

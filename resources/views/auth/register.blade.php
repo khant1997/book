@@ -4,6 +4,7 @@
     <div class="demo">
         <div class="content">
             <div id="large-header" class="large-header">
+                <canvas id="demo-canvas"></canvas>
                 <form method="POST" action="{{ route('register') }}" class="auth-form">
                     @csrf
 
