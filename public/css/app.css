@@ -10722,6 +10722,9 @@ body {
   background-position: center center;
   z-index: 1;
   background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/demo-bg.jpg");
+}
+
+.demo .curved-border {
   height: 95vh !important;
   border-bottom-left-radius: 50% 20%;
   border-bottom-right-radius: 50% 20%;
@@ -10747,5 +10750,33 @@ body {
 
 .main-title .thin {
   font-weight: 200;
+}
+
+/*Login*/
+
+.auth-form {
+  margin: 170px auto;
+  width: 50vw;
+}
+
+.auth-form input {
+  border: 1px solid #EDEDED;
+  border-radius: 4px;
+}
+
+.auth-form input:focus {
+  padding: 10px 5px 10px 10px;
+  outline: 0;
+  border-color: #FF7052;
+  box-shadow: none;
+}
+
+.auth-form label {
+  color: #FF7052;
+}
+
+.auth-form .auth-btn-custom {
+  background-color: #FF7052;
+  color: #fff;
 }
 
