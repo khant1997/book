@@ -148,7 +148,7 @@
     <a href="/category" class="nav-link"> <i class="fas fa-file"></i> <span>Category</span></a>
   </li>
   <li class="nav-item">
-    <a href="/category" class="nav-link"> <i class="fas fa-file"></i> <span>Report</span></a>
+    <a href="/category" class="nav-link"> <i class="fas fa-file"></i> <span></span></a>
   </li>
 
   <li class="nav-item">
@@ -176,7 +176,8 @@
             </div><!-- card-header end -->
             <div class="col-md-4">
                             <br>
-                            <button type="button" class="form-control btn btn-primary" onclick="report_export_with_type();">Export Excel</button>
+                           <!--  <button type="button" class="form-control btn btn-primary" onclick="report_export_with_type();">Export Excel</button> -->
+<!--                             <a href="/report" class="form-control btn btn-primary"><input type="button" name="">Excel Report</a> -->
                         </div>
             
             <div class="card-body">  <!-- card-body start -->
@@ -238,8 +239,7 @@ function myFunction1() {
     event.preventDefault();
 }
  function report_export_with_type() {
-        var form_action = "/report" + type;
-        window.location = form_action;
+        
     }
 </script>
 

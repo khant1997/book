@@ -27,6 +27,7 @@
                         <div class="card-header">
                             <strong class="card-title">book List</strong>
                         </div>
+                        
                         <div class="card-body">
                   <table id="bootstrap-data-table" class="table table-striped table-bordered">
 
