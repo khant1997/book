@@ -158,9 +158,7 @@
   <li class="nav-item">
     <a href="/category" class="nav-link"> <i class="fas fa-file"></i> <span>Category</span></a>
   </li>
-  <li class="nav-item">
-    <a href="/category" class="nav-link"> <i class="fas fa-file"></i> <span>Report</span></a>
-  </li>
+  
 
   <li class="nav-item">
     <a class="nav-link" href="charts.html">
