@@ -64,9 +64,12 @@ body {
         background-position: center center;
         z-index: 1;
         background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/demo-bg.jpg");
+    }
+    .curved-border {
         height: 95vh !important;
         border-bottom-left-radius: 50% 20%;
         border-bottom-right-radius: 50% 20%;
+
     }
     .main-title {
         text-transform: uppercase;
@@ -88,5 +91,32 @@ body {
     transform: translate3d(-50%, -50%, 0);
    .thin {
        font-weight: 200;
+    }
+}
+
+/*Login*/
+
+.auth-form {
+    margin: 170px auto;
+    width: 50vw;
+
+    input{
+        border: 1px solid #EDEDED;
+        border-radius: 4px;
+        &:focus{
+            padding: 10px 5px 10px 10px;
+            outline: 0;
+            border-color: #FF7052;
+            box-shadow: none;
+        }
+    }
+
+    label {
+        color: #FF7052;
+    }
+
+    .auth-btn-custom {
+        background-color: #FF7052;
+        color: #fff;
     }
 }

@@ -92978,7 +92978,10 @@ var staticRenderFns = [
       _c("div", { staticClass: "content" }, [
         _c(
           "div",
-          { staticClass: "large-header", attrs: { id: "large-header" } },
+          {
+            staticClass: "large-header curved-border",
+            attrs: { id: "large-header" }
+          },
           [
             _c("canvas", { attrs: { id: "demo-canvas" } }),
             _vm._v(" "),
