@@ -44,7 +44,7 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item {{ Request::segment(1) === 'test' ? 'active' : 'notActive' }}">
-                           <a class="nav-link" href="{{ url('test')}}">Home</a>
+                           <a class="nav-link" href="{{ url('test')}}"><i class="fas fa-home"> Home</i></a>
                         </li>
                         <li class="nav-item {{ Request::segment(1) === '/' ? 'active' : 'notActive' }}">
                            <a class="nav-link" href="{{ url('/')}}">About</a>

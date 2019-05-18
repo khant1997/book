@@ -137,7 +137,7 @@
 
 
   <li class="nav-item">
-    <a href="/book" class="nav-link"> <i class="fas fa-file"></i><span> Book </span></a>
+    <a href="/book" class="nav-link"> <span> <i class="fas fa-book"></i> Book </span></a>
   </li> 
 
   <li class="nav-item">
@@ -147,9 +147,7 @@
   <li class="nav-item">
     <a href="/category" class="nav-link"> <i class="fas fa-file"></i> <span>Category</span></a>
   </li>
-  <li class="nav-item">
-    <a href="/category" class="nav-link"> <i class="fas fa-file"></i> <span></span></a>
-  </li>
+  
 
   <li class="nav-item">
     <a class="nav-link" href="charts.html">
@@ -174,11 +172,7 @@
             <div class="card-header"><!-- card-header start -->
              <strong  class="row justify-content-center"><h2> Category Lists </h2></strong>
             </div><!-- card-header end -->
-            <div class="col-md-4">
-                            <br>
-                           <!--  <button type="button" class="form-control btn btn-primary" onclick="report_export_with_type();">Export Excel</button> -->
-<!--                             <a href="/report" class="form-control btn btn-primary"><input type="button" name="">Excel Report</a> -->
-                        </div>
+            
             
             <div class="card-body">  <!-- card-body start -->
                 <table id="bootstrap-data-table" class="table table-striped table-bordered">
@@ -225,6 +219,9 @@
                 </table>
                     
             </div> <!-- card-body end -->
+            <div class="col-md-4">
+                <a href="/categoryreport"><button type="button" class="form-control btn btn-primary">Export Excel</button></a>
+            </div>
         </div><!-- card end -->
     </div><!-- div class=col 12 Two end -->
 </div><!-- div class=row Two end -->

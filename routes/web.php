@@ -71,3 +71,4 @@ Route::get('/logout', 'Auth\LoginController@logout');
 Route::get('report', array('as'=>'report','uses'=>'ReportController@index'));
 Route::get('bookreport', array('as'=>'bookreport','uses'=>'BookReportController@index'));
 Route::get('orderreport', array('as'=>'orderreport','uses'=>'BookOrderReortController@index'));
+Route::get('categoryreport', array('as'=>'categoryreport','uses'=>'CategoryReportController@index'));

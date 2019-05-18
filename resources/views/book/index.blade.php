@@ -133,13 +133,13 @@
   </li>
 
   <li class="nav-item">
-      <a href="/book/create"  class="nav-link"><i class="fas fa-file "></i><span> Book Registration </span></a>
+      <a href="/book/create"  class="nav-link"><i class="fas fa-book"></i><span> Book Registration </span></a>
   </li> 
 
 
 
   <li class="nav-item">
-    <a href="/book" class="nav-link"> <i class="fas fa-file"></i><span> Book </span></a>
+    <a href="/book" class="nav-link"> <i class="fas fa-book"></i><span> Book </span></a>
   </li> 
 
   <li class="nav-item">
@@ -240,6 +240,9 @@
                 </table>
                     
             </div> <!-- card-body end -->
+            <div class="col-md-4">
+              <a href="/bookreport"><button type="button" class="form-control btn btn-primary">Export Excel</button></a>
+            </div>
         </div><!-- card end -->
     </div><!-- div class=col 12 Two end -->
 </div><!-- div class=row Two end -->
