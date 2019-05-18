@@ -34,7 +34,10 @@ table {
 }
 
 </style>
-
+@extends('layouts.app')
+@section('content')
+<br>
+<br>
 <div class="content mt-3"><!-- div class=row content start -->
     <div class="animated fadeIn"><!-- div class=FadeIn start -->
         <div class="card"><!-- card start -->
@@ -118,7 +121,7 @@ table {
 </div>
 </div>
 
-
+@endsection
 
 </body>
 </html>
