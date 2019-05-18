@@ -138,7 +138,7 @@
 
 
   <li class="nav-item">
-    <a href="/book" class="nav-link"> <i class="fas fa-file"></i><span> Book </span></a>
+    <a href="/book" class="nav-link"><i class="fas fa-book"></i><span> Book </span></a>
   </li> 
 
   <li class="nav-item">

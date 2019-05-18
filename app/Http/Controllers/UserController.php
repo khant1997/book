@@ -14,7 +14,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $objs = DB::table('users')->where('Status',1)->get();
+        $objs = DB::table('users')->where('Status', 1)->get();
         return view('user.index')
             ->with('objs', $objs);
 
@@ -40,7 +40,7 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request,[
+        $this->validate($request, [
             'name'=>'required',
             'email'=>'required|email|max:255|unique:users',
             'status'=>'required',
@@ -62,7 +62,7 @@ class UserController extends Controller
             $created_at = date("Y-m-d H:i:s");
            
     
-            DB::insert('insert into users (name,email,password,Address,Phone,status,created_at) values(?,?,?,?,,?,?,?)',[$name, $email,$password,$Address,$Phone,$status,$created_at]);
+            DB::insert('insert into users (name,email,password,Address,Phone,status,created_at) values(?,?,?,?,,?,?,?)', [$name, $email,$password,$Address,$Phone,$status,$created_at]);
             
             $successmessage = 'Success, user created successfully ...!';
             $request->session()->flash('success', $successmessage);
@@ -71,8 +71,9 @@ class UserController extends Controller
         //
     }
 
-    public function dectivate($id){
-         DB::table('users')->where('id',$id)->update(['Status'=>0]);
+    public function dectivate($id)
+    {
+         DB::table('users')->where('id', $id)->update(['Status'=>0]);
          return redirect()->action('UserController@index');
     }
 

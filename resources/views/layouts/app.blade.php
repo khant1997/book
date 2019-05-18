@@ -11,6 +11,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
@@ -25,7 +26,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
+        <nav class="navbar navbar-expand-md navbar-light navbar-laravel custom-nav">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
@@ -42,22 +43,22 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                           <a class="nav-link" href="index.php">Home</a>
+                        <li class="nav-item {{ Request::segment(1) === 'test' ? 'active' : 'notActive' }}">
+                           <a class="nav-link" href="{{ url('test')}}"><i class="fas fa-home"> Home</i></a>
                         </li>
-                        <li class="nav-item">
-                           <a class="nav-link" href="index.php">About</a>
+                        <li class="nav-item {{ Request::segment(1) === '/' ? 'active' : 'notActive' }}">
+                           <a class="nav-link" href="{{ url('/')}}">About</a>
                         </li>
-                        <li class="nav-item">
-                           <a class="nav-link" href="index.php">Contact Us</a>
+                        <li class="nav-item {{ Request::segment(1) === '/' ? 'active' : 'notActive' }}">
+                           <a class="nav-link" href="{{ url('/')}}">Contact Us</a>
                         </li>
                         <!-- Authentication Links -->
                         @guest
-                            <li class="nav-item">
+                            <li class="nav-item {{ Request::segment(1) === 'login' ? 'active' : 'notActive' }}">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
                             @if (Route::has('register'))
-                                <li class="nav-item">
+                                <li class="nav-item {{ Request::segment(1) === 'register' ? 'active' : 'notActive' }}">
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
@@ -90,3 +91,7 @@
     </div>
 </body>
 </html>
+
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/TweenLite.min.js" defer></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/EasePack.min.js" defer></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/demo.js" defer></script>

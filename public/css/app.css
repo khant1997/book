@@ -1,5 +1,11 @@
 @charset "UTF-8";
 
+@media only screen and (max-width: 768px) {
+  .demo .main-title {
+    font-size: 3em;
+  }
+}
+
 /*@import url('https://fonts.googleapis.com/css?family=Nunito');*/
 
 /*!
@@ -10669,9 +10675,57 @@ body {
   background-color: #333;
 }
 
+.custom-nav {
+  z-index: 9;
+  width: 100%;
+  background: transparent;
+  position: fixed;
+}
+
+.custom-nav .navbar-brand,
+.custom-nav .nav-link {
+  color: #fff !important;
+}
+
+.custom-nav .nav-item {
+  position: relative;
+}
+
+.custom-nav .nav-item .nav-link:before {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0;
+  content: ".";
+  color: transparent;
+  background: #cdd1d5;
+  height: 3px;
+  transition: all 0.5s;
+}
+
+.custom-nav .nav-item .nav-link:hover:before {
+  width: 100%;
+}
+
+.custom-nav .nav-item .nav-link:active:before {
+  width: 100% !important;
+  background: #FF7052 !important;
+}
+
+.custom-nav .nav-item.active .nav-link:before {
+  width: 100% !important;
+  background: #FF7052 !important;
+}
+
 .navbar-laravel {
-  background-color: #fff;
+  /*background-color: #fff;*/
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.category-card {
+  padding-bottom: 2em;
 }
 
 .book-card {
@@ -10687,5 +10741,78 @@ body {
   flex-direction: column;
   width: 150px;
   margin: 1em;
+}
+
+/*Home page*/
+
+.demo .large-header {
+  position: relative;
+  width: 100%;
+  background: #111;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center center;
+  z-index: 1;
+  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/demo-bg.jpg");
+}
+
+.demo .curved-border {
+  height: 95vh !important;
+  border-bottom-left-radius: 50% 20%;
+  border-bottom-right-radius: 50% 20%;
+}
+
+.demo .main-title {
+  text-transform: uppercase;
+  font-size: 4.2em;
+  letter-spacing: 0.1em;
+}
+
+.main-title {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  color: #F9F1E9;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate3d(-50%, -50%, 0);
+  transform: translate3d(-50%, -50%, 0);
+}
+
+.main-title .thin {
+  font-weight: 200;
+}
+
+/*Login*/
+
+.auth-form {
+  width: 50vw;
+  overflow: hidden;
+  z-index: 9999;
+  position: absolute;
+  top: 30%;
+  left: 30%;
+}
+
+.auth-form input {
+  border: 1px solid #EDEDED;
+  border-radius: 4px;
+}
+
+.auth-form input:focus {
+  padding: 10px 5px 10px 10px;
+  outline: 0;
+  border-color: #FF7052;
+  box-shadow: none;
+}
+
+.auth-form label {
+  color: #FF7052;
+}
+
+.auth-form .auth-btn-custom {
+  background-color: #FF7052;
+  color: #fff;
 }
 

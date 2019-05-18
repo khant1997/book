@@ -6,6 +6,7 @@ use App\Book;
 use Illuminate\Http\Request;
 use DB;
 use Auth;
+
 class BookController extends Controller
 {
     /**
@@ -17,11 +18,11 @@ class BookController extends Controller
     {
         $books = Book::all();
 
-        if(Auth::user()){
-            if(Auth::id() == '1'){
+        if (Auth::user()) {
+            if (Auth::id() == '1') {
                 return view('book.index')
                 ->with('books', $books);
-            }else{
+            } else {
                 return redirect()->action('FrontendController@index');
             }
         }
@@ -40,13 +41,12 @@ class BookController extends Controller
     public function create()
     {
         $categorys= DB::table('categories')->get();
-        if(Auth::user()){
-            if(Auth::id() == '1'){
-                return view('book.create',compact('categorys'));
-            }else{
+        if (Auth::user()) {
+            if (Auth::id() == '1') {
+                return view('book.create', compact('categorys'));
+            } else {
                 return redirect()->action('FrontendController@index');
             }
-           
         }
         //$categorys= DB::table('categories')->get();
         // return view('book.create')->with('category',$categorys);
@@ -62,10 +62,10 @@ class BookController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request,[
+        $this->validate($request, [
             'Book_Name'=>'required',
             'price'=>'required|integer|max:2147483647',
-            'status'=>'required'
+            // 'status'=>'required'
             ]);
   
 
@@ -129,8 +129,8 @@ class BookController extends Controller
     public function edit($id)
     {
         //$books = DB::select('select * from book where id = ?',[$id]);
-        $books= Book::where('id',$id)->get();
-        return view('book.edit',['books'=>$books]);
+        $books= Book::where('id', $id)->get();
+        return view('book.edit', ['books'=>$books]);
         //
     }
 
@@ -143,7 +143,7 @@ class BookController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request,[
+        $this->validate($request, [
             'Book_Name'=>'required',
             'price'=>'required|integer|max:2147483647',
             'status'=>'required'
@@ -199,6 +199,5 @@ class BookController extends Controller
         //DB::delete('delete from book where id = ?',[$id]);
         echo "Record deleted successfully.<br/>";
         echo '<a href="/book">Click Here</a> to go back.';
-
     }
 }
