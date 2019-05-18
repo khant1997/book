@@ -1,3 +1,4 @@
+
 <html>
 <head>
 <link rel="stylesheet" type="text/css" media="screen" href="main.css">
@@ -32,6 +33,10 @@
 </head>
 
 <body>
+@extends('layouts.app')
+@section('content')
+<br>
+<br>
 <div id="templatemo_container">
 <div class="container-fluid">
     <div class="row">
@@ -97,7 +102,7 @@
 </div>     
 
                          
-                                
+  @endsection                              
 
 
 </body>
