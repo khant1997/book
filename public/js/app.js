@@ -92986,8 +92986,10 @@ var staticRenderFns = [
             _c("canvas", { attrs: { id: "demo-canvas" } }),
             _vm._v(" "),
             _c("h1", { staticClass: "main-title" }, [
-              _c("span", { staticClass: "thin" }, [_vm._v("Hello")]),
-              _vm._v(" World")
+              _c("span", { staticClass: "thin" }, [
+                _vm._v("SAVING BROKE STUDENTS")
+              ]),
+              _vm._v(" ONE BOOK AT A TIME")
             ])
           ]
         )
