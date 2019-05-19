@@ -18,7 +18,7 @@ class BookOrderReortController extends Controller
         $bookorders = DB::Select('select * from bookorder');
         ob_end_clean();
         ob_start();
-        Excel::create('OrderReport', function($excel)use($bookorders) {
+        Excel::create('Book Order Report', function($excel)use($bookorders) {
                 $excel->sheet('OrderReport', function($sheet)use($bookorders) {
 
                     $displayArray   = array();
@@ -57,7 +57,7 @@ class BookOrderReortController extends Controller
                         $row->setFontColor('#ffffff');
                     });
                  
-                    $sheet->cells('A'.$count.':D'.$count, function($cells) {
+                    $sheet->cells('A'.$count.':H'.$count, function($cells) {
                         $cells->setBackground('#67c54a');
                         $cells->setFontColor('#ffffff');
                     });

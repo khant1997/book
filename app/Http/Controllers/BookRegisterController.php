@@ -61,7 +61,7 @@ class BookRegisterController extends Controller
             $status="1";
 
             DB::insert('insert into bookorder(user_id,book_id,Pdf_Name,Address,Price,From_Date,To_date,status) values(?,?,?,?,?,?,?,?)',[$user_id,$Book_Name,$Pdf_Name,$UserAddress,$Price,$pickup_date,$dropoff_date,$status]);
-            return redirect()->action('FrontendController@index');
+            return redirect()->action('FrontendController@allCategories');
                 
              
         //

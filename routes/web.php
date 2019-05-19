@@ -11,13 +11,14 @@
 |
 */
 
-Route::get('/test', array('as'=>'frontend','uses'=>'FrontendController@allCategories'));
-Route::get('/', array('as'=>'frontend','uses'=>'FrontendController@index'));
+Route::get('/', array('as'=>'frontend','uses'=>'FrontendController@allCategories'));
+//Route::get('/test', array('as'=>'frontend','uses'=>'FrontendController@index'));
 Auth::routes();
 // Route::get('/backend', function () {
 //     return view('admin.index');
 // });
 Route::get('/backend', 'FrontendController@backend');
+Route::get('/dashboard',        			array('as'=>'dashboard','uses'=>'DashboardController@index'));
 
 Route::get('/admin/login', function () {
     return view('admin.login');
@@ -34,6 +35,11 @@ Route::get('user', array('as'=>'user','uses'=>'UserController@index'));
 Route::get('user/create', array('as'=>'user/create','uses'=>'UserController@create'));
 Route::post('user/store', array('as'=>'user/store','uses'=>'UserController@store'));
 Route::get('user/dectivate/{id}', 'UserController@dectivate');
+Route::get('user/edit/{id}', array('as'=>'user/edit','uses'=>'UserController@edit'));
+Route::post('user/update', array('as'=>'user/update','uses'=>'UserController@update'));
+
+Route::get('editprofile/{id}', array('as'=>'editprofile','uses'=>'UserController@editprofile'));
+
 
 
 
@@ -68,6 +74,11 @@ Route::get('bookrent', array('as'=>'bookrent','uses'=>'BookRentListController@in
 
 Route::get('category/books/{id}', array('as'=>'category/books','uses'=>'CategoryBookController@categorybook'));
 Route::get('/logout', 'Auth\LoginController@logout');
+
+
+
+
+
 Route::get('report', array('as'=>'report','uses'=>'ReportController@index'));
 Route::get('bookreport', array('as'=>'bookreport','uses'=>'BookReportController@index'));
 Route::get('orderreport', array('as'=>'orderreport','uses'=>'BookOrderReortController@index'));

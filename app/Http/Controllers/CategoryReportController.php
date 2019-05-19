@@ -18,7 +18,7 @@ class CategoryReportController extends Controller
         $categorys = DB::Select('select * from categories');
         ob_end_clean();
         ob_start();
-        Excel::create('CategoryReport', function($excel)use($categorys) {
+        Excel::create('Category Report', function($excel)use($categorys) {
                 $excel->sheet('CategoryReport', function($sheet)use($categorys) {
 
                     $displayArray   = array();

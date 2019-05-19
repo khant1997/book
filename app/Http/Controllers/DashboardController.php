@@ -4,22 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
-use Auth;
 
-class FrontendController extends Controller
+class DashboardController extends Controller
 {
-    public function allCategories()
-    {
-        // $category = Category::orderBy('id', 'desc')->get();
-        // return response($category->jsonSerialize(), 200);
-        $book = DB::table('book')->get();
-        // return view('book.create')->with('category',$categorys);
-       
-
-        $categories = DB::table('categories')->get();
-       
-        return view('test',compact('categories','book'));
-    }
     /**
      * Display a listing of the resource.
      *
@@ -27,38 +14,32 @@ class FrontendController extends Controller
      */
     public function index()
     {
-        $book = DB::table('book')->get();
-        // return view('book.create')->with('category',$categorys);
-       
+        // Start - Searching Course Count Process
+        $book_count_raw = DB::select('select * from book where b_status = 0');
 
-        $categories = DB::table('categories')->get();
-       
-        return view('frontend.index',compact('categories','book'));
-        //
-    }
-
-    public function backend(){
-        if(Auth::user()){
-            if(Auth::id() == '1'){
-                return view('admin.index');
-            }else{
-                return redirect()->action('FrontendController@index');
-            }
-           
-        }else{
-            return redirect()->action('FrontendController@index');
+        if(isset($book_count_raw) && count($book_count_raw)>0){
+            $book_count = $book_count_raw[0]->book_count;
         }
-       
+        else{
+            $book_count = 0;
+        }
+        
+        // End - Searching Course Count Process
+
+        // Start - Searching User Count except Adimin (Role 2) Process
+        
+        return view('partials.index')
+            ->with('book_count_raw', $book_count_raw);
     }
+            
 
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function profile()
-    {   $user=DB::table('users')->get();
-        return view('frontend.edit'); 
+    public function create()
+    {
         //
     }
 

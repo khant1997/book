@@ -38,6 +38,8 @@ table {
 @section('content')
 <br>
 <br>
+<br>
+<br>
 <div class="content mt-3"><!-- div class=row content start -->
     <div class="animated fadeIn"><!-- div class=FadeIn start -->
         <div class="card"><!-- card start -->
@@ -106,7 +108,9 @@ table {
                 <tr>
                     <td></td>
                     <td>
-                    <input type="submit" class="span3 btn btn-info" value="Rent">  
+                   
+                     <input href="/" class="span3 btn btn-primary" type='submit' value="rent" />
+                   
                     <a href="book/details/{id}" class="span3 btn btn-secondary">Cancel</a>
                     </td>    
                 </tr>

@@ -19,7 +19,7 @@ class BookReportController extends Controller
         $books = DB::Select('select * from book');
         ob_end_clean();
         ob_start();
-        Excel::create('UserReport', function($excel)use($books) {
+        Excel::create('Book Report', function($excel)use($books) {
                 $excel->sheet('UserReport', function($sheet)use($books) {
 
                     $displayArray   = array();
@@ -57,7 +57,7 @@ class BookReportController extends Controller
                         $row->setFontColor('#ffffff');
                     });
                  
-                    $sheet->cells('A'.$count.':D'.$count, function($cells) {
+                    $sheet->cells('A'.$count.':H'.$count, function($cells) {
                         $cells->setBackground('#67c54a');
                         $cells->setFontColor('#ffffff');
                     });

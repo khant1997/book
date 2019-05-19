@@ -24,7 +24,7 @@
                         @endforeach
                     </ul> -->
                 </div>
-                <div class="col-8">
+                <div class="col-9">
                     <div class="d-flex flex-row" style="flex-wrap: wrap">
                         @foreach($book as $books)
                         <!-- @if($books == null)
