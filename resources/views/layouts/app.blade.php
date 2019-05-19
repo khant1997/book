@@ -44,16 +44,16 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item {{ Request::segment(1) === 'test' ? 'active' : 'notActive' }}">
-                           <a class="nav-link" href="{{ url('/')}}"><i class="fas fa-home"> Home</i></a>
+                           <a class="nav-link" href="{{ url('/')}}"><i class="fas fa-home"></i> Home</a>
+                        </li>
+                        <li class="nav-item {{ Request::segment(1) === 'bookrent' ? 'active' : 'notActive' }}">
+                           <a class="nav-link" href="{{ url('bookrent')}}"><i class="fas fa-store"> </i> My book store</a>
                         </li>
                         <li class="nav-item {{ Request::segment(1) === '/' ? 'active' : 'notActive' }}">
                            <a class="nav-link" href="{{ url('/aboutus')}}">About</a>
                         </li>
                         <li class="nav-item {{ Request::segment(1) === '/' ? 'active' : 'notActive' }}">
                            <a class="nav-link" href="{{ url('/')}}">Contact Us</a>
-                        </li>
-                        <li class="nav-item {{ Request::segment(1) === '/' ? 'active' : 'notActive' }}">
-                           <a class="nav-link" href="{{ url('bookrent')}}"><i class="fas fa-store"> My book store</i></a>
                         </li>
                         <!-- Authentication Links -->
                         @guest

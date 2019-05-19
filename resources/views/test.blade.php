@@ -11,25 +11,14 @@
                         <h4 class="pb-2 border-bottom"><i class="fas fa-stream"></i> Categories</h4>
                         @foreach($categories as $category)
                         <div class="text item mb-1">
-                            <a href="/category/books/{{$category->id}}" style="color: #000; text-decoration: none"> {{$category->Category_Name}}</a>
+                            <a href="/category/books/{{$category->id}}" style="color: #000; text-decoration: none"><i class="fas fa-angle-right"></i> {{$category->Category_Name}}</a>
                         </div>
                         @endforeach
                     </div>
-                    <!-- <ul class="list-group">
-                        @foreach($categories as $category)
-                            <li class="list-group-item">
-                                <a href="/category/books/{{$category->id}}"> {{$category->Category_Name}}</a>
-                                <span class="badge badge-primary badge-pill">13</span>
-                            </li>
-                        @endforeach
-                    </ul> -->
                 </div>
                 <div class="col-9">
                     <div class="d-flex flex-row" style="flex-wrap: wrap">
                         @foreach($book as $books)
-                        <!-- @if($books == null)
-                            <div>Sorrry! Nothing to show.</div>
-                        @endif -->
                         <div class="book-card">
                             <img src="/uploads/books/{{$books->Image}}" style="height: 150px;width: 100%;">
                             <div class="p-2" style="height: 100px">
@@ -41,6 +30,11 @@
                         </div>
                         @endforeach
                     </div>
+                    @if ( $book->links() )
+                        <div class="float-right mr-5 mt-3">
+                            {{ $book->links() }}
+                        </div>
+                    @endif
                 </div>
             </div>
         </el-card>

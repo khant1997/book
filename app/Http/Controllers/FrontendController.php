@@ -5,20 +5,17 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use Auth;
+use App\Book;
 
 class FrontendController extends Controller
 {
     public function allCategories()
     {
-        // $category = Category::orderBy('id', 'desc')->get();
-        // return response($category->jsonSerialize(), 200);
-        $book = DB::table('book')->get();
-        // return view('book.create')->with('category',$categorys);
-       
+        $book = Book::paginate(14);
 
         $categories = DB::table('categories')->get();
        
-        return view('test',compact('categories','book'));
+        return view('test', compact('categories', 'book'));
     }
     /**
      * Display a listing of the resource.
@@ -33,22 +30,21 @@ class FrontendController extends Controller
 
         $categories = DB::table('categories')->get();
        
-        return view('frontend.index',compact('categories','book'));
+        return view('frontend.index', compact('categories', 'book'));
         //
     }
 
-    public function backend(){
-        if(Auth::user()){
-            if(Auth::id() == '1'){
+    public function backend()
+    {
+        if (Auth::user()) {
+            if (Auth::id() == '1') {
                 return view('admin.index');
-            }else{
+            } else {
                 return redirect()->action('FrontendController@index');
             }
-           
-        }else{
+        } else {
             return redirect()->action('FrontendController@index');
         }
-       
     }
 
     /**
@@ -57,8 +53,9 @@ class FrontendController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function profile()
-    {   $user=DB::table('users')->get();
-        return view('frontend.edit'); 
+    {
+        $user=DB::table('users')->get();
+        return view('frontend.edit');
         //
     }
 
