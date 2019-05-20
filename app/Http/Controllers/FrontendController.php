@@ -6,9 +6,21 @@ use Illuminate\Http\Request;
 use DB;
 use Auth;
 use App\Book;
+use App\Category;
 
 class FrontendController extends Controller
 {
+    public function search(Request $request)
+    {
+        $q = $request->q;
+        $book = Book::where('Book_Name', 'LIKE', '%'.$q.'%')
+                ->orWhere('Author_Name', 'LIKE', '%'.$q.'%')
+                ->paginate(14);
+        $categories = Category::all();
+
+        return view('test', compact('categories', 'book'));
+    }
+
     public function allCategories()
     {
         $book = Book::paginate(14);

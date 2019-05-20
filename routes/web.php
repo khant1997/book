@@ -18,7 +18,7 @@ Auth::routes();
 //     return view('admin.index');
 // });
 Route::get('/backend', 'FrontendController@backend');
-Route::get('/dashboard',        			array('as'=>'dashboard','uses'=>'DashboardController@index'));
+Route::get('/dashboard', array('as'=>'dashboard','uses'=>'DashboardController@index'));
 
 Route::get('/admin/login', function () {
     return view('admin.login');
@@ -30,6 +30,7 @@ Route::get('/admin/Forgot', function () {
     return view('admin.forgot-password');
 });
 
+Route::any('/search', 'FrontendController@search');
 
 Route::get('user', array('as'=>'user','uses'=>'UserController@index'));
 Route::get('user/create', array('as'=>'user/create','uses'=>'UserController@create'));

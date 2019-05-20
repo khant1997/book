@@ -10672,7 +10672,7 @@ a.text-dark:focus {
 
 body {
   font-family: "Rubik", sans-serif !important;
-  background-color: #333;
+  background-color: #353b48;
 }
 
 .custom-nav {
@@ -10726,6 +10726,43 @@ body {
 
 .category-card {
   padding-bottom: 2em;
+}
+
+.search-box .searchbar {
+  width: 300px;
+  height: 40px;
+  background-color: #353b48;
+  border-radius: 30px;
+  padding: 5px;
+}
+
+.search-box .searchbar .search_input {
+  color: #fff;
+  border: 1px;
+  outline: 0;
+  background-color: #353b48 !important;
+  caret-color: #FF7052;
+  line-height: 30px;
+  padding-left: 10px;
+  margin-left: 5px;
+  width: 80%;
+}
+
+.search-box .searchbar .search_icon {
+  background: white;
+  height: 30px;
+  width: 30px;
+  float: right;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: white;
+  border: none;
+}
+
+.search-box .searchbar .search_icon i {
+  color: #FF7052;
 }
 
 .book-card {
