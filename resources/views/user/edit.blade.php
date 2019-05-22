@@ -1,84 +1,113 @@
 
 
-<div class="content mt-3"><!-- div class=row content start -->
-    <div class="animated fadeIn"><!-- div class=FadeIn start -->
-        <div class="card"><!-- card start -->
+@extends('layouts.app')
 
-            <div class="card-header"><!-- card-header start -->
-                <strong class="card-title">Category Edit</strong>
-            </div><!-- card-header end -->
-    
-            <div class="card-body">  <!-- card-body start -->
+@section('content')
+    <div class="demo">
+        <div class="content">
+            <div id="large-header" class="large-header">
+                <canvas id="demo-canvas"></canvas>
+                <form method="POST" action="{{ route('register') }}" class="auth-form">
+                    @csrf
 
-			<form action="/user/update/<?php echo $obj[0]->id; ?>" method="post">
-                <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
+                    <div class="form-group row">
+                        <label for="name" class="col-md-4 col-form-label">{{ __('Name') }}</label>
 
-                <div class="row"><!-- div class=row One start -->
+                        <div class="col-md-6">
+                            <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
 
-                    <div class="col-md-4"><!-- div class=col One start -->
-                     User Name<br>
-                        <input class="form-control" type='text' name='name'value='<?php echo
-	$objs[0]->name; ?>' />
-                     </div><!-- div class=col  One end -->
-                            
-
-                    <div class="col-md-4">
-                        User Email<br>
-                        <input class="form-control" type='text' name='email'value='<?php echo
-	$objs[0]->email; ?>' />
-                    </div><!-- div class=col  One end -->
-
-                    <div class="col-md-4"><!-- div class=col One start -->
-                     User Address<br>
-                        <input class="form-control" type='text' name='Address'value='<?php echo
-	$objs[0]->Address; ?>' />
-                     </div><!-- div class=col  One end -->
-                            
-                    
-                     <div class="col-md-4"><!-- div class=col One start -->
-                     Phone<br>
-                        <input class="form-control" type='text' name='Phone'value='<?php echo
-	$objs[0]->Phone; ?>' />
-                     </div><!-- div class=col  One end -->
-                            
-                    
-                     <div class="col-md-4"><!-- div class=col One start -->
-                     Phone<br>
-                        <input class="form-control" type='text' name='password'value='<?php echo
-	$objs[0]->password; ?>' />
-                     </div><!-- div class=col  One end -->
-                            
-
-                    
-                            
-
-
-                
-
-                    <div class="col-md-2">
-                        <input class="form-control btn btn-primary" type='submit' value="Update" />
+                            @error('name')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
                     </div>
 
-                    <div class="col-md-2">
-                        <a href="/userP" class="form-control btn btn-secondary">Cancel</a>
+                    <div class="form-group row">
+                        <label for="email" class="col-md-4 col-form-label">{{ __('E-Mail Address') }}</label>
+
+                        <div class="col-md-6">
+                            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+
+                            @error('email')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
                     </div>
 
-                </div><!-- div class=row One end -->
+                    <div class="form-group row">
+                        <label for="password" class="col-md-4 col-form-label">{{ __('Password') }}</label>
 
+                        <div class="col-md-6">
+                            <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+
+                            @error('password')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="password-confirm" class="col-md-4 col-form-label">{{ __('Confirm Password') }}</label>
+
+                        <div class="col-md-6">
+                            <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                        </div>
+                    </div>
+
+
+                    <div class="form-group row">
+                        <label for="Address" class="col-md-4 col-form-label">{{ __('Address') }}</label>
+
+                        <div class="col-md-6">
+                            <input id="Address" type="text" class="form-control @error('Address') is-invalid @enderror" name="Address" value="{{ old('Address') }}" required autocomplete="Address" autofocus>
+
+                            @error('Address')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+                    </div>
+
+
+
+                    <div class="form-group row">
+                        <label for="Phone" class="col-md-4 col-form-label">{{ __('Phone') }}</label>
+
+                        <div class="col-md-6">
+                            <input id="Phone" type="number" class="form-control @error('Phone') is-invalid @enderror" name="Phone" value="{{ old('Phone') }}" required autocomplete="Phone" autofocus>
+
+                            @error('Phone')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+                    </div>
+
+                    
+
+
+
+
+
+
+                    <div class="form-group row mb-0">
+                            <div class="col-md-6 offset-md-4">
+                                <button type="submit" class="btn btn-primary">
+                                    {{ __('Register') }}
+                                </button>
+                            </div>
+                        </div>
                 </form>
-            </div> <!-- card-body end -->
+            </div>
+        </div>
+    </div>
+@endsection
 
-        </div><!-- card end -->
-    </div><!-- div class=FadeIn start -->
-</div><!-- div class=row content end -->
-
-
-
-
-
-
-
-
-
-</body>
-</html>
