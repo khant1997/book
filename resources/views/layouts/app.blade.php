@@ -47,7 +47,7 @@
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel custom-nav">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                    <i class="fas fa-store"></i> BOOK STORE
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -68,19 +68,19 @@
                            <a class="nav-link" href="{{ url('bookrent')}}"><i class="fas fa-store"> </i> My book store</a>
                         </li>
                         <li class="nav-item {{ Request::segment(1) === '/' ? 'active' : 'notActive' }}">
-                           <a class="nav-link" href="{{ url('/aboutus')}}">About</a>
+                           <a class="nav-link" href="{{ url('/about')}}"><i class="fas fa-address-card"></i> About</a>
                         </li>
                         <li class="nav-item {{ Request::segment(1) === '/' ? 'active' : 'notActive' }}">
-                           <a class="nav-link" href="{{ url('/')}}">Contact Us</a>
+                           <a class="nav-link" href="{{ url('/contact')}}"><i class="fas fa-address-book"></i> Contact Us</a>
                         </li>
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item {{ Request::segment(1) === 'login' ? 'active' : 'notActive' }}">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link" href="{{ route('login') }}"><i class="fas fa-sign-in-alt"></i> {{ __('Login') }}</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item {{ Request::segment(1) === 'register' ? 'active' : 'notActive' }}">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link" href="{{ route('register') }}"><i class="fas fa-paste"></i> {{ __('Register') }}</a>
                                 </li>
                             @endif
                         @else

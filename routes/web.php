@@ -47,6 +47,9 @@ Route::get('edit/{id}', array('as'=>'edit','uses'=>'UserController@editprofile')
 Route::get('/about', function () {
     return view('about');
 });
+Route::get('/contact', function () {
+    return view('contact');
+});
 
 
 
