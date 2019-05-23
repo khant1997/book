@@ -10780,6 +10780,20 @@ body {
   margin: 1em;
 }
 
+.book-card .no-image {
+  height: 150px;
+  width: 100%;
+  background-color: #ccc;
+}
+
+.book-card .no-image p {
+  text-align: center;
+  margin: 50px 10px 0 10px;
+  border-top: 2px solid #FF7052;
+  border-bottom: 2px solid #FF7052;
+  border-radius: 3px;
+}
+
 /*Home page*/
 
 .demo .large-header {

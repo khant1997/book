@@ -11,7 +11,9 @@
                         <h4 class="pb-2 border-bottom"><i class="fas fa-stream"></i> Categories</h4>
                         @foreach($categories as $category)
                         <div class="text item mb-1">
-                            <a href="/category/books/{{$category->id}}" style="color: #000; text-decoration: none"><i class="fas fa-angle-right"></i> {{$category->Category_Name}}</a>
+                            <a href="/category/books/{{$category->id}}" style="color: #000; text-decoration: none">
+                                <i class="fas fa-angle-right"></i> {{ $category->name }}
+                            </a>
                         </div>
                         @endforeach
                     </div>
@@ -30,7 +32,15 @@
                     <div class="d-flex flex-row" style="flex-wrap: wrap">
                         @foreach($book as $books)
                         <div class="book-card">
+                            @if(isset($books->Image))
                             <img src="/uploads/books/{{$books->Image}}" style="height: 150px;width: 100%;">
+                            {{$books->Image}}
+                            @else
+                            <div class="no-image">
+                                <p class="py-2" style="">{{$books->Book_Name}}</p>
+                                }
+                            </div>
+                            @endif
                             <div class="p-2" style="height: 100px">
                                 <h6>{{$books->Book_Name}}</h6>
                                 <span>{{$books->Author_Name}}</span>
