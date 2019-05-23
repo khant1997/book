@@ -42,9 +42,14 @@ Route::post('user/update', array('as'=>'user/update','uses'=>'UserController@upd
 Route::get('editprofile/{id}', array('as'=>'editprofile','uses'=>'UserController@editprofile'));
 
 
+Route::get('edit/{id}', array('as'=>'edit','uses'=>'UserController@editprofile'));
 
-
-
+Route::get('/about', function () {
+    return view('about');
+});
+Route::get('/contact', function () {
+    return view('contact');
+});
 
 
 

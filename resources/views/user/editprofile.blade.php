@@ -1,85 +1,92 @@
-<html>
-<head>
-    
+@extends('layouts.app')
+@section('content')
+<div class="demo">
+        <div class="content">
+            <div id="large-header" class="large-header">
+                <canvas id="demo-canvas"></canvas>
+                    <form action="/user/update" method="post" class="auth-form">
+                        <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
+                            <div class="form-group row">
+                                <label class="col-md-4 col-form-label">User Name</label>
 
-</head>
+                                    <div class="col-md-4">
+                                        <input type ="hidden" name="user_id" value="<?php echo $users[0]->id; ?>">
+                                        <input class="form-control" type='text' name='name'value='<?php echo $users[0]->name; ?>' />
 
-<body>
+                                        
+                                    </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-md-4 col-form-label">User Email</label>
 
-<form action="/user/update" method="post">
-                <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
+                                <div class="col-md-4">
+                                    <input class="form-control" type='text' name='email'    value='<?php echo $users[0]->email; ?>' />
 
-                <div class="row"><!-- div class=row One start -->
-                   <input type ="hidden" name="user_id" value="<?php echo $users[0]->id; ?>">
-                    <div class="col-md-4"><!-- div class=col One start -->
-                     User Name<br>
-                        <input class="form-control" type='text' name='name'value='<?php echo
-	$users[0]->name; ?>' />
-                     </div><!-- div class=col  One end -->
+                                    
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-md-4 col-form-label">User Address</label>
+
+                                <div class="col-md-4">
+                                    <input class="form-control" type='text' name='Address'value='<?php echo $users[0]->Address; ?>' />
+
+                                    
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-md-4 col-form-label">Phone</label>
+
+                                <div class="col-md-4">
+                                    <input class="form-control" type='text' name='Phone'value='<?php echo $users[0]->phone; ?>' />
+
+                                   
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-md-4 col-form-label">Old Password</label>
+
+                                <div class="col-md-4">
+                                    <input class="form-control" type='text' name='old_password'value=''>
+
+                                    
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-md-4 col-form-label">New Password</label>
+
+                                <div class="col-md-4">
+                                    <input class="form-control" type='text' name='new_password'value=''>
+
+                                    
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-2">
+                                            <input class="form-control btn btn-primary" type='submit' value="Update" />
+
+                                </div>
+
+                                 <div class="col-md-2">
+                                            <a href="/user" class="form-control btn btn-secondary">Cancel</a>
+                                </div>
+                            </div>
                             
 
-                    <div class="col-md-4">
-                        User Email<br>
-                        <input class="form-control" type='text' name='email'value='<?php echo
-	$users[0]->email; ?>' />
-                    </div><!-- div class=col  One end -->
-
-                    <div class="col-md-4"><!-- div class=col One start -->
-                     User Address<br>
-                        <input class="form-control" type='text' name='Address'value='<?php echo
-	$users[0]->Address; ?>' />
-                     </div><!-- div class=col  One end -->
                             
-                    
-                     <div class="col-md-4"><!-- div class=col One start -->
-                     Phone<br>
-                        <input class="form-control" type='text' name='Phone'value='<?php echo
-	$users[0]->phone; ?>' />
-                     </div><!-- div class=col  One end -->
+                           
+
                             
-                    
-                     <div class="col-md-4"><!-- div class=col One start -->
-                    Old Password<br>
-                        <input class="form-control" type='text' name='old_password'value=''>
-                     </div><!-- div class=col  One end -->
-                               
-                    
-                     <div class="col-md-4"><!-- div class=col One start -->
-                    New Password<br>
-                        <input class="form-control" type='text' name='new_password'value=''>
-                     </div><!-- div class=col  One end -->
-                            
+                    </form>
+               
+            </div>
+        </div>
+</div>
 
-                    
-                            
-
-
-                
-
-                    <div class="col-md-2">
-                        <input class="form-control btn btn-primary" type='submit' value="Update" />
-                    </div>
-
-                    <div class="col-md-2">
-                        <a href="/user" class="form-control btn btn-secondary">Cancel</a>
-                    </div>
-
-                </div><!-- div class=row One end -->
-
-                </form>
-            </div> <!-- card-body end -->
-
-        </div><!-- card end -->
-    </div><!-- div class=FadeIn start -->
-</div><!-- div class=row content end -->
+@endsection
 
 
 
 
 
 
-
-
-
-</body>
-</html>
