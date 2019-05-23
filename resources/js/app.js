@@ -5,6 +5,9 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 import Vue from 'vue';
+import 'bootstrap-css-only/css/bootstrap.min.css'; 
+import 'mdbvue/build/css/mdb.css';
+import mdbvue from 'mdbvue';
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 require('./bootstrap');
@@ -27,6 +30,8 @@ window.Vue = require('vue');
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('banner-component', require('./components/banner.vue').default);
 Vue.component('home-page', require('./components/home.vue').default);
+Vue.component('mdb-card', require('./components/mdbCard.vue').default);
+Vue.component('about-us', require('./components/Aboutus.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

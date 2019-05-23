@@ -3,7 +3,7 @@
 @section('content')
 <div>
     <home-page></home-page>
-    <div id="templatemo_content" class="container">
+    <div id="templatemo_content" class="container wow fadeInUp">
         <el-card class="box-card my-4">
             <div class="row">
                 <div class="col-3 border-right">
@@ -11,9 +11,7 @@
                         <h4 class="pb-2 border-bottom"><i class="fas fa-stream"></i> Categories</h4>
                         @foreach($categories as $category)
                         <div class="text item mb-1">
-                            <a href="/category/books/{{$category->id}}" style="color: #000; text-decoration: none">
-                                <i class="fas fa-angle-right"></i> {{ $category->name }}
-                            </a>
+                            <a href="/category/books/{{$category->id}}" style="color: #000; text-decoration: none"><i class="fas fa-angle-right"></i> {{$category->Category_Name}}</a>
                         </div>
                         @endforeach
                     </div>
@@ -31,23 +29,8 @@
                     </div>
                     <div class="d-flex flex-row" style="flex-wrap: wrap">
                         @foreach($book as $books)
-                        <div class="book-card">
-                            @if(isset($books->Image))
-                            <img src="/uploads/books/{{$books->Image}}" style="height: 150px;width: 100%;">
-                            {{$books->Image}}
-                            @else
-                            <div class="no-image">
-                                <p class="py-2" style="">{{$books->Book_Name}}</p>
-                                }
-                            </div>
-                            @endif
-                            <div class="p-2" style="height: 100px">
-                                <h6>{{$books->Book_Name}}</h6>
-                                <span>{{$books->Author_Name}}</span>
-                                <br>
-                                <a href="/book/details/{{$books->id}}">Detail</a>
-                            </div> 
-                        </div>
+
+                        <mdb-card class="book-card" :books="{{ $books }}"></mdb-card>
                         @endforeach
                     </div>
                     @if ( $book->links() )
@@ -59,6 +42,6 @@
             </div>
         </el-card>
     </div>
+    <about-us class="wow slideInUp"></about-us>
 </div>
 @endsection
-

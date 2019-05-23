@@ -10672,13 +10672,13 @@ a.text-dark:focus {
 
 body {
   font-family: "Rubik", sans-serif !important;
-  background-color: #353b48;
+  /*background-color: #353b48!important;*/
 }
 
 .custom-nav {
   z-index: 9;
   width: 100%;
-  background: transparent;
+  background: #353b48;
   position: fixed;
 }
 
@@ -10769,15 +10769,28 @@ body {
   border-radius: 10px;
   overflow: hidden;
   background-color: #fff;
-  height: 350%;
+  min-height: 265px;
   transition: all 0.2s ease-out;
   box-shadow: 0 2px 20px -4px rgba(0, 0, 0, 0.19);
   display: -moz-flex;
   display: flex;
   -moz-flex-direction: column;
   flex-direction: column;
-  width: 150px;
+  width: 165px;
   margin: 1em;
+}
+
+.book-card .card-title {
+  font-size: 1.1rem;
+}
+
+.book-card .card-body {
+  padding: 15px;
+}
+
+.book-card img {
+  height: 150px;
+  width: 100%;
 }
 
 .book-card .no-image {
