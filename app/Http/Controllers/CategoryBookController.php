@@ -14,6 +14,6 @@ class CategoryBookController extends Controller
 
         $categories = DB::table('categories')->get();
        
-        return view('test',compact('categories','book'));
+        return view('/test',compact('categories','book'));
    }
 }

@@ -29,7 +29,7 @@
                     </div>
                     <div class="d-flex flex-row" style="flex-wrap: wrap">
                         @foreach($book as $books)
-
+                        
                         <mdb-card class="book-card" :books="{{ $books }}"></mdb-card>
                         @endforeach
                     </div>
