@@ -69,10 +69,10 @@
                            <a class="nav-link" href="{{ url('bookrent')}}"><i class="fas fa-store"> </i> My book store</a>
                         </li>
                         <li class="nav-item {{ Request::segment(1) === '/' ? 'active' : 'notActive' }}">
-                           <a class="nav-link" href="{{ url('/about')}}"><i class="fas fa-address-card"></i> About</a>
+                           <a class="nav-link" href="#about-us"><i class="fas fa-address-card"></i> About</a>
                         </li>
                         <li class="nav-item {{ Request::segment(1) === '/' ? 'active' : 'notActive' }}">
-                           <a class="nav-link" href="{{ url('/contact')}}"><i class="fas fa-address-book"></i> Contact Us</a>
+                           <a class="nav-link" href="#contact-us"><i class="fas fa-address-book"></i> Contact Us</a>
                         </li>
                         <!-- Authentication Links -->
                         @guest

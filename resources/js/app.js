@@ -9,9 +9,16 @@ import 'bootstrap-css-only/css/bootstrap.min.css';
 import 'mdbvue/build/css/mdb.css';
 import mdbvue from 'mdbvue';
 import ElementUI from 'element-ui';
+import * as VueGoogleMaps from 'vue2-google-maps'
 import 'element-ui/lib/theme-chalk/index.css';
 require('./bootstrap');
 
+Vue.use(VueGoogleMaps, {
+  load: {
+    key: "AIzaSyDqOeUlHbFN51JD1eW8SunnLQBK2KAlP2U",
+    libraries: "places" // necessary for places input
+  }
+});
 Vue.use(ElementUI);
 
 window.Vue = require('vue');
@@ -32,6 +39,7 @@ Vue.component('banner-component', require('./components/banner.vue').default);
 Vue.component('home-page', require('./components/home.vue').default);
 Vue.component('mdb-card', require('./components/mdbCard.vue').default);
 Vue.component('about-us', require('./components/Aboutus.vue').default);
+Vue.component('contact-us', require('./components/contact.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

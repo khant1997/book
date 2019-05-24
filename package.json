@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "element-ui": "^2.8.2",
-    "mdbvue": "^5.4.0"
+    "mdbvue": "^5.4.0",
+    "vue2-google-maps": "^0.10.5"
   }
 }

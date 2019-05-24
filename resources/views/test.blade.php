@@ -29,8 +29,15 @@
                     </div>
                     <div class="d-flex flex-row" style="flex-wrap: wrap">
                         @foreach($book as $books)
-
-                        <mdb-card class="book-card" :books="{{ $books }}"></mdb-card>
+                        <div class="book-card">
+                            <img src="/uploads/books/{{$books->Image}}" style="height: 150px;width: 100%;">
+                            <div class="p-2" style="height: 100px">
+                                <h6>{{$books->Book_Name}}</h6>
+                                <span>{{$books->Author_Name}}</span>
+                                <br>
+                                <a href="/book/details/{{$books->id}}">Detail</a>
+                            </div> 
+                        </div>
                         @endforeach
                     </div>
                     @if ( $book->links() )
@@ -42,6 +49,7 @@
             </div>
         </el-card>
     </div>
-    <about-us class="wow slideInUp"></about-us>
+    <about-us class="wow slideInUp" id="about-us"></about-us>
+    <contact-us class="wow slideInUp" id="contact-us"></contact-us>
 </div>
 @endsection
