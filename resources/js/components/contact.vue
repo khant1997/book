@@ -12,15 +12,64 @@
 		<div class="container">
 			<div class="row contact">
 				<div class="col-md-6" style="margin-bottom: 100px;">
-					<h6 class=" mt-5 mb-4">PRODUCT DESIGN: EAMES CHAIRS</h6>
-                    <p>
-                    	Eames designs are certainly konic. Everyone of us know at least
-                    	two to three of their famous chairs. I would even risk saying that most of us dream about having a nice Eames. 
-                    </p>
-                    <p>
-                    	Lorem ipsum dolor sit amet, consectetur,<span class="text-dark"> adipisicing elit</span>, sed do eiusmod
-                    	tempor incididunt ut labore et dolore magna aliqua.
-                    </p>
+					<div class="demo">
+    
+            
+            	
+            	
+				<div id="templatemo_content" class="container">
+		        <el-card class="box-card my-2">
+		            <div class="row">
+		                <div class="col-3 border-right">
+		                    <div class="category-card mt-3">
+		                        <h3 style="color: rgb(226, 63, 13);"><i class="fas fa-phone"></i>   Call Us</h3>
+		                        
+		                        <div class="text item mb-1">
+		                           09 444 864 401 <br>
+		                           Monday -Friday: 8AM -5 PM
+		                           Saturday -Sunday: Closed
+		                        </div>
+		                        
+		                    </div>
+		                </div>
+		                <div class="col-9">
+		                    
+		                    <div class="d-flex flex-row" style="flex-wrap: wrap">
+		                       
+		                        <div>
+		                            
+		                            <div class="p-3" style="height: 200px">
+		                                <h3><i class="fas fa-envelope-open"></i> Email Us</h3>
+		                                <div class="text item mb-1">
+				                           hmk@gmail.com <br>
+				                           Monday -Friday: 8AM -5 PM <br>
+				                           Saturday -Sunday: Closed
+				                        </div>
+		                            </div> 
+		                        </div>
+		                       
+		                        <div>
+		                            
+		                            <div class="p-3" style="height: 200px">
+		                                <h3><i class="far fa-address-card"></i> Address</h3>
+		                                <div class="text item mb-1">
+				                           -Tarmwae Township <br>
+				                           -MyintTarNyunt 
+				                           
+				                        </div>
+		                            </div> 
+		                        </div>
+		                        
+		                        
+		                    </div>
+
+		                    
+		                </div>
+		            </div>
+		        </el-card>
+		    </div>
+            
+</div>
 				</div>
 				<div class="col-md-6">
 					<form role="form" class="contact-form">
@@ -57,7 +106,7 @@
 			<div class="container">
 				<div class="row justify-content-center">
 					<div class="col-md-6 col-sm-6 col-xs-6 col-12">
-						<p class="mb-0 text-white"> &copy; Copyright 2014 by PSD Booster. All Rights Reserved.</p>
+						<p class="mb-0 text-white"> &copy; Copyright 2019 . All Rights Reserved.</p>
 					</div>
 					<div class="col-md-6 col-sm-6 col-xs-6 col-12">
 						<ul class="list-inline social-icon">

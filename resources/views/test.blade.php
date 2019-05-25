@@ -38,6 +38,7 @@
                                 <a href="/book/details/{{$books->id}}">Detail</a>
                             </div> 
                         </div>
+                        
                         @endforeach
                     </div>
                     @if ( $book->links() )
